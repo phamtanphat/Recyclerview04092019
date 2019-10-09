@@ -12,5 +12,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // 1 : Tạo ra class mon an
+        // 2 : Tao ra layout item mon an
     }
 }
