@@ -34,7 +34,7 @@
         <TextView
             android:layout_marginTop="10dp"
             android:layout_below="@id/textviewMoTa"
-            android:id="@+id/textviewTGia"
+            android:id="@+id/textviewGia"
             android:textStyle="bold"
             android:textColor="#4CAF50"
             android:textSize="25sp"
