@@ -22,6 +22,7 @@ public class MonAnAdapter extends RecyclerView.Adapter<MonAnAdapter.MonanViewHol
     ArrayList<MonAn> mArraysMonAn;
     private OnItemClickListener mOnItemClickListener;
 
+
     public void setOnItemClickListener(OnItemClickListener mOnItemClickListener){
         this.mOnItemClickListener = mOnItemClickListener;
     }
