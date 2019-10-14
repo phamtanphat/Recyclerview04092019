@@ -4,9 +4,75 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="#0F0F0F"
     tools:context=".MainActivity">
+
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+      <TextView
+          android:id="@+id/textviewTieuDe"
+          android:textSize="30sp"
+          android:gravity="center"
+          android:textColor="#f20"
+          android:text="Thêm món mới"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
+      <EditText
+          android:maxLength="50"
+          android:maxLines="1"
+          android:layout_below="@id/textviewTieuDe"
+          android:id="@+id/edittextTen"
+          android:textColor="#f20"
+          android:hint="Tên món ăn"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
+      <EditText
+          android:maxLength="50"
+          android:maxLines="1"
+          android:layout_below="@id/edittextTen"
+          android:id="@+id/edittextMota"
+          android:textColor="#f20"
+          android:hint="Mô tả"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
+      <EditText
+          android:maxLength="5"
+          android:maxLines="1"
+          android:inputType="number"
+          android:layout_below="@id/edittextMota"
+          android:id="@+id/edittextGiaTien"
+          android:textColor="#f20"
+          android:hint="Giá tiền"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"/>
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_marginTop="5dp"
+          android:layout_width="match_parent"
+          android:layout_below="@id/edittextGiaTien"
+          android:layout_height="wrap_content">
+         <Button
+             app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintLeft_toLeftOf="parent"
+             app:layout_constraintRight_toLeftOf="@id/buttonHuybo"
+             android:id="@+id/buttonDongy"
+             android:text="Đồng ý"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"/>
+         <Button
+             app:layout_constraintLeft_toRightOf="@id/buttonDongy"
+             app:layout_constraintTop_toTopOf="parent"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintRight_toRightOf="parent"
+             android:id="@+id/buttonHuybo"
+             android:text="Hủy bỏ"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"/>
+      </androidx.constraintlayout.widget.ConstraintLayout>
+   </RelativeLayout>
 
    <androidx.recyclerview.widget.RecyclerView
        android:layout_width="match_parent"
