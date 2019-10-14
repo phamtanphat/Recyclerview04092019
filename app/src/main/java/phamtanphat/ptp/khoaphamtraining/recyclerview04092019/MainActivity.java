@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -47,6 +48,17 @@ public class MainActivity extends AppCompatActivity {
         mMonAnRecycle.addItemDecoration(new DividerItemDecoration(MainActivity.this,DividerItemDecoration.VERTICAL));
         mMonAnRecycle.setAdapter(mMonAnAdapter);
 
+
+        // Task
+        // 1 : xóa : Long Click để xóa dòng hiện tại
+        // 2 : cập nhật :
+            //  onClick vào dòng hiện tại
+            //  truyền thông tin của dòng hiện tại cho form bên trên
+            // Người dùng click Đồng ý cập nhật lại dữ liệu
+            // Người dùng click Hủy bỏ thì xóa dữ liệu trong form
+        // 3 : Thêm:
+            // Truyền dữ liệu vào các edittext
+            // Đồng ý thì thêm và ngược lại
         if (mMonAnRecycle.getAdapter() != null){
             ((MonAnAdapter)mMonAnRecycle.getAdapter()).setOnItemClickListener(new OnItemClickListener() {
                 @Override
@@ -56,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onLongClick(View v, @NonNull int position) {
-                    Toast.makeText(MainActivity.this, "onLongClick " + position, Toast.LENGTH_SHORT).show();
+                    mArrayMonan.remove(position);
+                    mMonAnAdapter.notifyDataSetChanged();
                 }
             });
         }
