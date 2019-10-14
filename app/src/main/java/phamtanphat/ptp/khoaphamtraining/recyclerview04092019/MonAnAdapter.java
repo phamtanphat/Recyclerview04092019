@@ -1,5 +1,6 @@
 package phamtanphat.ptp.khoaphamtraining.recyclerview04092019;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +66,13 @@ public class MonAnAdapter extends RecyclerView.Adapter<MonAnAdapter.MonanViewHol
             txtTen = itemView.findViewById(R.id.textviewTen);
             txtGia = itemView.findViewById(R.id.textviewGia);
             txtMota = itemView.findViewById(R.id.textviewMoTa);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.d("BBB",getLayoutPosition() + "");
+                }
+            });
         }
     }
 }
