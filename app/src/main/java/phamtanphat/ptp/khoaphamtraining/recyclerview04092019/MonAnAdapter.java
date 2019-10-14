@@ -20,6 +20,11 @@ public class MonAnAdapter extends RecyclerView.Adapter<MonAnAdapter.MonanViewHol
     // 2 : Kết thừa RecyclerView.Adapter<ViewHolder>
     // 3 : Định nghĩa các phương thức trong adapter
     ArrayList<MonAn> mArraysMonAn;
+    private OnItemClickListener mOnItemClickListener;
+
+    public void setOnItemClickListener(OnItemClickListener mOnItemClickListener){
+        this.mOnItemClickListener = mOnItemClickListener;
+    }
 
     public MonAnAdapter(ArrayList<MonAn> mArraysMonAn) {
         this.mArraysMonAn = mArraysMonAn;
@@ -70,7 +75,14 @@ public class MonAnAdapter extends RecyclerView.Adapter<MonAnAdapter.MonanViewHol
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.d("BBB",getLayoutPosition() + "");
+                    mOnItemClickListener.onClick(view, getLayoutPosition());
+                }
+            });
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    mOnItemClickListener.onLongClick(view, getLayoutPosition());
+                    return true;
                 }
             });
         }
